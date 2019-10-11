@@ -23,7 +23,9 @@ export default function Cnpj () {
         <input
             className="txt"
             id="txtCnpj"
-            value={cnpj.cnpj}></input>
+            value={cnpj.cnpj ? cnpj.cnpj : 0}
+            readOnly={true}
+        ></input>
         <button className="btn" onClick={handleSubmit}>Gerar Novo CNPJ</button>
         </>
     )
