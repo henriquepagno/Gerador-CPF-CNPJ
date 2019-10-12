@@ -44,7 +44,7 @@ cpfValidator = function (cpfIn) {
         return;
     }
 
-	this.reposta = true;
+	this.resposta = true;
 }
 
 module.exports = cpfValidator;

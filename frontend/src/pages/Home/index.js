@@ -10,11 +10,23 @@ export default function Home ( { history} ) {
     {
       history.push('/cnpj')
     }
+
+    function handleCnpjValidatorClick()
+    {
+      history.push('/cnpjvalidator')
+    }
+
+    function handleCpfValidatorClick()
+    {
+      history.push('/cpfvalidator')
+    }
     
     return (
     <>
         <button className="btn" onClick={handleCpfClick}>Gerar CPF</button>
         <button className="btn" onClick={handleCnpjClick}>Gerar CNPJ</button>
+        <button className="btn" onClick={handleCnpjValidatorClick}>Validar CNPJ</button>
+        <button className="btn" onClick={handleCpfValidatorClick}>Validar CPF</button>
     </>
     )
 }
