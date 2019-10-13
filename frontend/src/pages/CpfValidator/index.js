@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 import ToggleBox from "../../components/ToggleBox";
+import '../CpfValidator/index.css';
+import InputMask from "react-input-mask";
 
 export default function CpfValidator () {
     const [ cpf, setCpf ] = useState('');
@@ -16,6 +18,7 @@ export default function CpfValidator () {
         else {
             setCpfValido("inválido");
         }
+
     }
 
     function handleChange( event ) {
@@ -25,16 +28,17 @@ export default function CpfValidator () {
     
     return (
         <>
-        <input
+        <InputMask
             className="txt"
             id="txtCpf"
             placeholder="Informe o CPF"
             value={cpf}
             onChange={handleChange}
-            ></input>
+            mask="999.999.999-99"
+            ></InputMask>
         <button className="btn" onClick={ValidaCPF}>Validar</button>
         <ToggleBox>
-            <p>O CPF é {cpfValido}.</p>
+            <p className="labelAnswer">O CPF é <strong className={cpfValido === "válido" ? "answerTrue" : "answerFalse"}>{cpfValido}</strong>.</p>
         </ToggleBox>
         </>
     )
