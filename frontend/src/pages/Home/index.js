@@ -25,8 +25,8 @@ export default function Home ( { history} ) {
     <>
         <button className="btn" onClick={handleCpfClick}>Gerar CPF</button>
         <button className="btn" onClick={handleCnpjClick}>Gerar CNPJ</button>
-        <button className="btn" onClick={handleCnpjValidatorClick}>Validar CNPJ</button>
         <button className="btn" onClick={handleCpfValidatorClick}>Validar CPF</button>
+        <button className="btn" onClick={handleCnpjValidatorClick}>Validar CNPJ</button>
     </>
     )
 }
