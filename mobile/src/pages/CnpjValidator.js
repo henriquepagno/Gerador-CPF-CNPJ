@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 import api from '../../services/api';
 
-import ToggleBox from "../../components/ToggleBox";
-import InputMask from "react-input-mask";
+import ToggleBox from "../components/ToggleBox";
+import { TextInputMask } from 'react-native-masked-text'
 
 export default function CnpjValidator () {
     const [ cnpj, setCnpj ] = useState('');
@@ -22,24 +22,21 @@ export default function CnpjValidator () {
 
     }
 
-    function handleChange( event ) {
-        setCnpj(event.target.value);
+    function handleChange( value ) {
+        setCnpj(value);
         window.toggleBoxComponent.toggleBoxDisable();
     }
 
     return (
         <View>
-            <InputMask
-                className="txt"
-                id="txtCnpj"
-                placeholder="Informe o CNPJ"
+            <TextInputMask
+                type={'cnpj'}
                 value={cnpj}
-                onChange={handleChange}
-                mask="99.999.999/9999-99"
-                ></InputMask>
+                onChangeText={text => setCnpj(text)}
+            />
             <Button title="Validar" onPress={ValidaCNPJ}> </Button>
             <ToggleBox>
-                <Text className="labelAnswer">O CNJ é <strong className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</strong>.</Text>
+                <Text className="labelAnswer">O CNPJ é <Text className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</Text>.</Text>
             </ToggleBox>
         </View>
     )

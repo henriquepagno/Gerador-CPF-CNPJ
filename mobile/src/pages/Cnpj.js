@@ -7,7 +7,7 @@ export default function Cnpj() {
 
     async function buscaCnpj() {
         const response = await api.get('/cnpj');
-        setCnpj(response.data.cpf);
+        setCnpj(response.data.cnpj);
     }
 
     function handleSubmit(event)
