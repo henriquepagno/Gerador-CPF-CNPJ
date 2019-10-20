@@ -32,7 +32,7 @@ export default function CnpjValidator () {
             <TextInputMask
                 type={'cnpj'}
                 value={cnpj}
-                onChangeText={text => setCnpj(text)}
+                onChangeText={text => handleChange(text)}
             />
             <Button title="Validar" onPress={ValidaCNPJ}> </Button>
             <ToggleBox>

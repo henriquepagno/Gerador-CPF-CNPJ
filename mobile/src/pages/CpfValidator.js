@@ -11,7 +11,7 @@ export default function CpfValidator () {
 
     async function ValidaCPF() {
         window.toggleBoxComponent.toggleBoxEnable();
-        const response = await api.post('/cpf', { cnpj });
+        const response = await api.post('/cpf', { cpf });
         
         if (response.data.cpfValidator.resposta){
             setCpfValido("válido");
@@ -32,7 +32,7 @@ export default function CpfValidator () {
             <TextInputMask
                 type={'cpf'}
                 value={cpf}
-                onChangeText={text => setCnpj(text)}
+                onChangeText={text => handleChange(text)}
             />
             <Button title="Validar" onPress={ValidaCPF}> </Button>
             <ToggleBox>
