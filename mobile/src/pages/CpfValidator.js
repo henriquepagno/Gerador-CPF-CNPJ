@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { KeyboardAvoidingView, Text, Button } from 'react-native';
 import api from '../../services/api';
 
 import ToggleBox from "../components/ToggleBox";
@@ -28,7 +28,7 @@ export default function CpfValidator () {
     }
 
     return (
-        <View>
+        <KeyboardAvoidingView enabled={Platform.OS == "ios"} behavior="padding">
             <TextInputMask
                 type={'cpf'}
                 value={cpf}
@@ -38,6 +38,6 @@ export default function CpfValidator () {
             <ToggleBox>
                 <Text className="labelAnswer">O CPF é <Text className={cpfValido === "válido" ? "answerTrue" : "answerFalse"}>{cpfValido}</Text>.</Text>
             </ToggleBox>
-        </View>
+        </KeyboardAvoidingView>
     )
 }

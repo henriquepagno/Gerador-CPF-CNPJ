@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { KeyboardAvoidingView, Text, Button } from 'react-native';
 import api from '../../services/api';
 
 import ToggleBox from "../components/ToggleBox";
 import { TextInputMask } from 'react-native-masked-text'
+import { Platform } from '@unimodules/core';
 
 export default function CnpjValidator () {
     const [ cnpj, setCnpj ] = useState('');
@@ -28,7 +29,7 @@ export default function CnpjValidator () {
     }
 
     return (
-        <View>
+        <KeyboardAvoidingView enabled={Platform.OS == "ios"} behavior="padding">
             <TextInputMask
                 type={'cnpj'}
                 value={cnpj}
@@ -38,6 +39,6 @@ export default function CnpjValidator () {
             <ToggleBox>
                 <Text className="labelAnswer">O CNPJ é <Text className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</Text>.</Text>
             </ToggleBox>
-        </View>
+        </KeyboardAvoidingView>
     )
 }
