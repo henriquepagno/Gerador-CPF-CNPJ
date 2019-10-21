@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Text, Button } from 'react-native';
+import { KeyboardAvoidingView, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import api from '../../services/api';
 
 import ToggleBox from "../components/ToggleBox";
@@ -35,7 +36,9 @@ export default function CnpjValidator () {
                 value={cnpj}
                 onChangeText={text => handleChange(text)}
             />
-            <Button title="Validar" onPress={ValidaCNPJ}> </Button>
+            <TouchableOpacity style={styles.button} onPress={ValidaCNPJ}>
+                <Text style={styles.buttonText}>Validar</Text>
+            </TouchableOpacity>
             <ToggleBox>
                 <Text className="labelAnswer">O CNPJ é <Text className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</Text>.</Text>
             </ToggleBox>

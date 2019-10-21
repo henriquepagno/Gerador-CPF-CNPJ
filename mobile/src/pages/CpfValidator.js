@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Text, Button } from 'react-native';
+import { KeyboardAvoidingView, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import api from '../../services/api';
 
 import ToggleBox from "../components/ToggleBox";
@@ -34,7 +35,9 @@ export default function CpfValidator () {
                 value={cpf}
                 onChangeText={text => handleChange(text)}
             />
-            <Button title="Validar" onPress={ValidaCPF}> </Button>
+            <TouchableOpacity style={styles.button} onPress={ValidaCPF}>
+                <Text style={styles.buttonText}>Validar</Text>
+            </TouchableOpacity>
             <ToggleBox>
                 <Text className="labelAnswer">O CPF é <Text className={cpfValido === "válido" ? "answerTrue" : "answerFalse"}>{cpfValido}</Text>.</Text>
             </ToggleBox>

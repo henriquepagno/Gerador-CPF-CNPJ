@@ -1,5 +1,6 @@
 import React, { useEffect , useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import api from '../../services/api';
 
 export default function Cnpj() {
@@ -27,7 +28,9 @@ export default function Cnpj() {
                 value={`${cnpj.cnpj ? cnpj.cnpj : 0}`}
                 readOnly={true}
             ></TextInput>
-            <Button title="Gerar Novo CNPJ" onPress={handleSubmit}> </Button>
+            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                <Text style={styles.buttonText}>Gerar Novo CNPJ</Text>
+            </TouchableOpacity>
         </View>
     )
 }
