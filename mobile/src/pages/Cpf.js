@@ -1,7 +1,9 @@
 import React, { useEffect , useState } from 'react';
-import { View, TextInput } from 'react-native';
+import { View, TextInput, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import api from '../../services/api';
+import Styles from '../styles/Style';
 
 export default function Cpf() {
     const [ cpf, setCpf ] = useState('');
@@ -21,16 +23,19 @@ export default function Cpf() {
     }, [ ])
 
     return (
-        <View>
-            <TextInput
-                className="txt"
-                id="txtCpf"
-                value={`${cpf.cpf ? cpf.cpf : 0}`}
-                readOnly={true}
-            ></TextInput>
-            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
-                <Text style={styles.buttonText}>Gerar Novo CPF</Text>
-            </TouchableOpacity>
+        <View style={Styles.container}>
+            <View style={Styles.form}>
+                <TextInput
+                    className="txt"
+                    id="txtCpf"
+                    value={`${cpf.cpf ? cpf.cpf : 0}`}
+                    style={Styles.input}
+                    readOnly={true}
+                ></TextInput>
+                <TouchableOpacity style={Styles.button} onPress={handleSubmit}>
+                    <Text style={Styles.buttonText}>Gerar Novo CPF</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

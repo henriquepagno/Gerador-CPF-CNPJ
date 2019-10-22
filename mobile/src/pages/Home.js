@@ -3,34 +3,6 @@ import { View, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Styles from '../styles/Style';
 
-/*const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
-    form: {
-        alignSelf: 'stretch',
-        paddingHorizontal: 30,
-        marginTop: 30,
-    },
-
-    button: {
-        height: 42,
-        backgroundColor: '#f05a5b',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 2,
-    },
-
-    buttonText: {
-        color: '#FFF',
-        fontWeight: 'bold',
-        fontSize: 16,
-    }
-})*/
-
 class Home extends Component {
     render() {
         return (

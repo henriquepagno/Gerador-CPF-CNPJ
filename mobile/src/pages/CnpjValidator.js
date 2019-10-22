@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import api from '../../services/api';
-
-import ToggleBox from "../components/ToggleBox";
 import { TextInputMask } from 'react-native-masked-text'
 import { Platform } from '@unimodules/core';
+
+import api from '../../services/api';
+import Styles from '../styles/Style';
+
+import ToggleBox from "../components/ToggleBox";
 
 export default function CnpjValidator () {
     const [ cnpj, setCnpj ] = useState('');
@@ -30,18 +32,21 @@ export default function CnpjValidator () {
     }
 
     return (
-        <KeyboardAvoidingView enabled={Platform.OS == "ios"} behavior="padding">
-            <TextInputMask
-                type={'cnpj'}
-                value={cnpj}
-                onChangeText={text => handleChange(text)}
-            />
-            <TouchableOpacity style={styles.button} onPress={ValidaCNPJ}>
-                <Text style={styles.buttonText}>Validar</Text>
-            </TouchableOpacity>
-            <ToggleBox>
-                <Text className="labelAnswer">O CNPJ é <Text className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</Text>.</Text>
-            </ToggleBox>
+        <KeyboardAvoidingView style={Styles.container} enabled={Platform.OS == "ios"} behavior="padding">
+            <View style={Styles.form}>
+                <TextInputMask
+                    type={'cnpj'}
+                    value={cnpj}
+                    style={Styles.input}
+                    onChangeText={text => handleChange(text)}
+                />
+                <TouchableOpacity style={Styles.button} onPress={ValidaCNPJ}>
+                    <Text style={Styles.buttonText}>Validar</Text>
+                </TouchableOpacity>
+                <ToggleBox>
+                    <Text style={Styles.label}>O CNPJ é <Text style={cnpjValido === "válido" ? Styles.answerTrue : Styles.answerFalse}>{cnpjValido}</Text>.</Text>
+                </ToggleBox>
+            </View>
         </KeyboardAvoidingView>
     )
 }
