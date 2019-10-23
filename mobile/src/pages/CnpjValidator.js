@@ -39,6 +39,7 @@ export default function CnpjValidator () {
                     type={'cnpj'}
                     value={cnpj}
                     style={Styles.input}
+                    placeholder="Informe o CNPJ"
                     onChangeText={text => handleChange(text)}
                 />
                 <TouchableOpacity style={Styles.button} onPress={ValidaCNPJ}>
