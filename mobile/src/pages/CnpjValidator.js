@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Text } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { TextInputMask } from 'react-native-masked-text'
 import { Platform } from '@unimodules/core';
+import { View } from 'react-native-animatable';
 
 import api from '../../services/api';
 import Styles from '../styles/Style';

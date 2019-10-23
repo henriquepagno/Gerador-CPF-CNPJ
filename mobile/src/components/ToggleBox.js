@@ -38,9 +38,9 @@ class ToggleBox extends React.Component {
 		const { opened } = this.state;
 
 		return (
-			<View className="box">
+			<View>
 				{opened && (
-					<View className="boxContent">
+					<View>
 						{children}
 					</View>
 				)}

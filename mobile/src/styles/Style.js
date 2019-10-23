@@ -29,24 +29,23 @@ const styles = StyleSheet.create({
     },
 
     input: {
+        alignSelf: 'stretch',
+        justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#ddd',
-        paddingHorizontal: 20,
         fontSize: 16,
         color: '#444',
         height: 44,
         marginBottom: 20,
-        borderRadius: 2
+        borderRadius: 2,
+        textAlign: 'center'
     },
 
     label: {
-        borderRadius: 2,
-        width: 100,
-        height: 40,
-        margin: 15,
         textAlign: 'center',
-        fontSize: 16,
-        fontWeight: 'bold'
+        justifyContent: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
     },
 
     answerTrue: {

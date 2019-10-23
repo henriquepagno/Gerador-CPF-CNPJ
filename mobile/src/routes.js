@@ -7,7 +7,7 @@ import Cnpj from './pages/Cnpj';
 import CpfValidator from './pages/CpfValidator';
 import CnpjValidator from './pages/CnpjValidator';
 
-const RootStackRoutes = createStackNavigator({
+const RootStackRoutes = createStackNavigator({    
     Home: Home,
     Cpf: Cpf,
     Cnpj: Cnpj,
