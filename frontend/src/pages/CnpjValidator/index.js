@@ -8,7 +8,7 @@ export default function CnpjValidator () {
     const [ cnpj, setCnpj ] = useState('');
     const [ cnpjValido, setCnpjValido] = useState('');
 
-    async function ValidaCNPJ() {
+    async function ValidaCnpj() {
         window.toggleBoxComponent.toggleBoxEnable();
         const response = await api.post('/cnpj', { cnpj });
         
@@ -36,7 +36,7 @@ export default function CnpjValidator () {
             onChange={handleChange}
             mask="99.999.999/9999-99"
             ></InputMask>
-        <button className="btn" onClick={ValidaCNPJ}>Validar</button>
+        <button className="btn" onClick={ValidaCnpj}>Validar</button>
         <ToggleBox>
             <p className="labelAnswer">O CNPJ é <strong className={cnpjValido === "válido" ? "answerTrue" : "answerFalse"}>{cnpjValido}</strong>.</p>
         </ToggleBox>

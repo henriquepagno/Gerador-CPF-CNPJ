@@ -4,18 +4,18 @@ import api from '../../services/api';
 export default function Cpf () {
     const [ cpf, setCpf ] = useState('');
 
-    async function buscaCnpj() {
+    async function buscaCpf() {
         const response = await api.get('/cpf');
         setCpf(response.data.cpf);
     }
 
     function handleSubmit(event)
     {
-        buscaCnpj();
+        buscaCpf();
     }
 
     useEffect(() => {
-        buscaCnpj();
+        buscaCpf();
     }, [ ])
     
     return (

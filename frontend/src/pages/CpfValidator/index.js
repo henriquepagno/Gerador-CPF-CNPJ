@@ -8,7 +8,7 @@ export default function CpfValidator () {
     const [ cpf, setCpf ] = useState('');
     const [cpfValido, setCpfValido] = useState('');
 
-    async function ValidaCPF() {
+    async function ValidaCpf() {
         window.toggleBoxComponent.toggleBoxEnable();
         const response = await api.post('/cpf', { cpf });
         
@@ -36,7 +36,7 @@ export default function CpfValidator () {
             onChange={handleChange}
             mask="999.999.999-99"
             ></InputMask>
-        <button className="btn" onClick={ValidaCPF}>Validar</button>
+        <button className="btn" onClick={ValidaCpf}>Validar</button>
         <ToggleBox>
             <p className="labelAnswer">O CPF é <strong className={cpfValido === "válido" ? "answerTrue" : "answerFalse"}>{cpfValido}</strong>.</p>
         </ToggleBox>
